@@ -8,6 +8,13 @@
       "when": 1791036676401,
       "tag": "0000_furry_professor_monster",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1791038084135,
+      "tag": "0001_slippery_microbe",
+      "breakpoints": true
     }
   ]
 }

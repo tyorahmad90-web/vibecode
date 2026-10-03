@@ -8,3 +8,9 @@ export const users = mysqlTable('users', {
   createdAt: timestamp('created_at').defaultNow(),
 });
 
+export const sessions = mysqlTable('sessions', {
+  id: int('id').primaryKey().autoincrement(),
+  token: varchar('token', { length: 255 }).notNull(),
+  user_id: int('user_id').references(() => users.id),
+  createdAt: timestamp('created_at').defaultNow(),
+});
