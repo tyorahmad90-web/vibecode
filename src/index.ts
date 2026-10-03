@@ -1,10 +1,12 @@
 import { Elysia } from 'elysia';
 import { db } from './db';
 import { users } from './db/schema';
+import { usersRoute } from './routes/users-route';
 
 const app = new Elysia()
   .get('/', () => 'Welcome to Vibecode API!')
   .get('/health', () => ({ status: 'ok', time: new Date().toISOString() }))
+  .use(usersRoute)
   .get('/users', async () => {
     try {
       const allUsers = await db.select().from(users);
